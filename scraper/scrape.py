@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import re
 
 # Function to scrape data from the page
 def scrape_company_data(url):
@@ -20,6 +21,7 @@ def scrape_company_data(url):
             company_name_tag = company_div.find('h5', class_ = 'et_pb_toggle_title')
             if company_name_tag:
                 company_name = company_name_tag.get_text(strip=True) # company name
+                company_name = re.sub(r' - (East|West) Stand \d+', '', company_name)
                 # print(company_name)
                 website_div = company_div.find('div', class_='et_pb_toggle_content clearfix')
                 if website_div:
@@ -34,7 +36,7 @@ def scrape_company_data(url):
 # Function to save the results to a CSV file
 def save_to_csv(data):
     with open('data/companies.csv', mode='w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, delimiter=',')
         writer.writerow(['Company Name', 'Company Website'])  # Header row
         writer.writerows(data)  # Data rows
 
