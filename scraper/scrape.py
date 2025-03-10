@@ -35,7 +35,7 @@ def scrape_company_data(url):
 
 # Function to save the results to a CSV file
 def save_to_csv(data):
-    with open('data/companies.csv', mode='w', newline='') as file:
+    with open('data/companies.csv', mode='a', newline='') as file:
         writer = csv.writer(file, delimiter=',')
         writer.writerow(['Company Name', 'Company Website'])  # Header row
         writer.writerows(data)  # Data rows
