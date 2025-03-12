@@ -1,6 +1,7 @@
 import requests
+import csv
 
-def get_first_organic_result(query, country="au", page=0, results=10, api_key="67cfcde7d68d1581a845178c"):
+def get_first_organic_result(query, country="au", page=0, results=10, api_key="67d14bebf8d0b5ef949a4edb"):
     url = "https://api.scrapingdog.com/google/"
     
     # Set up the parameters
@@ -33,7 +34,8 @@ def get_first_organic_result(query, country="au", page=0, results=10, api_key="6
         return None
 
 
-# with open("../data/HITEC.csv", mode="a", newline="", encoding="utf-8") as file:
+
+# with open("../data/sydneybuildexpo.csv", mode="a", newline="", encoding="utf-8") as file:
 #     writer = csv.writer(file)
     
 
