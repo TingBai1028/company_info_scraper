@@ -25,6 +25,6 @@ def update_company_websites(csv_file, output_csv):
     print(f"CSV file has been updated and saved to {output_csv}.")
 
 # Usage example
-csv_file = '../data/sydneybuildexpo.csv'  # Input CSV file
-output_csv = '../data/sydneybuildexpo copy.csv'  # Output CSV file with updated websites
+csv_file = '../data/designshow.csv'  # Input CSV file
+output_csv = '../data/designshow copy.csv'  # Output CSV file with updated websites
 update_company_websites(csv_file, output_csv)
